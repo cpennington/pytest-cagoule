@@ -90,6 +90,7 @@ def get_line_number_filter(start_line, end_line):
 
 def get_node_ids(specs):
     query, params = get_query(specs)
+    print(query, params)
     if query is None:
         return []
 
@@ -101,5 +102,6 @@ def get_node_ids(specs):
     cursor.execute(query, params)
 
     contexts = [context.decode() for (context,) in cursor.fetchall()]
+    print(contexts)
     node_ids = [context.split("|")[0] for context in contexts]
     return list(node_ids)
