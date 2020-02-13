@@ -16,6 +16,7 @@ def get_data_file():
 
 
 def db_exists():
+    print("DB_EXISTS()", get_data_file(), os.path.exists(get_data_file()))
     return os.path.exists(get_data_file())
 
 
